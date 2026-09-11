@@ -3,7 +3,7 @@
 name: to-tickets
 description: Break a plan, spec, or conversation into tracer-bullet tickets with explicit blocking edges. Write each ticket as a Markdown file plus a minimal index to a user-specified folder.
 disable-model-invocation: true
-------------------------------
+---
 
 # To Tickets
 

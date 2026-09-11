@@ -2,7 +2,7 @@
 
 name: code-review-specs
 description: Review a completed implementation against both the repository's general code-review standards and the originating spec/ticket. Run the general code review and a focused spec review, then report both separately.
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 # Code Review Specs
 
@@ -15,7 +15,7 @@ The implementation has already been completed and tested by `/implement`. **Do n
 
 ## 1. Establish context
 
-Use the work supplied by `/implement` to identify:
+Use the work supplied by `/implement` or `/implement-ticket` to identify:
 
 * The fixed point before implementation began.
 * The implementation commit/branch.
