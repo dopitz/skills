@@ -75,11 +75,13 @@ A few extra lines are often preferable if they make the intent substantially cle
 
 ### 3. Comments
 
-Comments should be **very rare**.
+Review new and changed function/API documentation for consistency with the repository's established format, tags and required content. Apply applicable `doc-style.md` or equivalent guidance, and flag departures from those conventions.
 
-Do not recommend comments to explain ordinary code. First consider whether the code itself can communicate the intent through better naming, structure, types, or control flow.
+Comment-minimization guidance applies to incidental inline commentary; it does not restrict API contracts or established function documentation.
 
-Comments are appropriate primarily for:
+Do not recommend incidental comments to explain ordinary code. First consider whether the code itself can communicate the intent through better naming, structure, types, or control flow.
+
+Inline comments are appropriate primarily for:
 
 * Genuinely non-obvious or "black magic" behavior.
 * Subtle invariants that cannot reasonably be expressed in code.

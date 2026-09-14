@@ -8,7 +8,9 @@ Implement the work described by the user in the spec or tickets.
 
 Use tdd where possible, at pre-agreed seams.
 
-Make limited use of comments, only documenting crucial decisions that are not already obvious through the code itself. If you write a comment, it should always document the "what is" and not describe it by refering to the "what used to be".
+Follow the repository's existing comment and documentation conventions, including the format and tags used by surrounding function/API documentation. Apply applicable `doc-style.md` or equivalent guidance to code documentation as well as standalone documentation.
+
+Limit incidental inline comments to non-obvious decisions or invariants. This restriction does not apply to API contracts or established function documentation. Describe current behavior, not historical changes.
 
 Run typechecking regularly, single test files regularly, and the full test suite once at the end.
 

@@ -12,7 +12,9 @@ Implement the ticket using its linked specifications and relevant prerequisite r
 
 Use TDD where possible at pre-agreed seams. Run build/type checks and focused tests during implementation, then the required full suite before completion. Unexecuted checks are not passing evidence.
 
-Comment only crucial decisions not obvious from the code; describe current behavior, not historical changes.
+Follow the repository's existing comment and documentation conventions, including the format and tags used by surrounding function/API documentation. Apply applicable `doc-style.md` or equivalent guidance to code documentation as well as standalone documentation.
+
+Limit incidental inline comments to non-obvious decisions or invariants. This restriction does not apply to API contracts or established function documentation. Describe current behavior, not historical changes.
 
 For review gates, produce evidence and a pass/fail decision. Blocking findings keep the gate incomplete.
 
