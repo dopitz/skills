@@ -4,6 +4,7 @@ description: formats code to be better readable
 ---
 
 Review the code for large continuous blocks and split them into logical units using vertical whitespace.
+Avoid eager line wrapping: preserve readable lines up to 120 characters; wrap longer lines at punctuation or logical boundaries.
 
 Add brief explanatory comments where useful:
 - Prefer a single line; never more than two.
