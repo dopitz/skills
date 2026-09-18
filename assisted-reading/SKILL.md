@@ -65,23 +65,6 @@ One short commentary sentence explaining what matters in this span and why.
 
 - Concrete knowledge established by this substep.
 - Another concrete outcome about behavior, ownership or relationships.
-
-### N.2. Next reading action
-
-Read [next symbol](source-link): exact span.
-
-One short commentary sentence.
-
-**Checkpoint — you should know:**
-
-- Concrete outcome.
-- Another concrete outcome.
-
-### N.3. Trivial reading action
-
-Read [trivial symbol](source-link): exact span.
-
-One short commentary sentence.
 ```
 
 Keep the reading target and one-line commentary separate. Add a focused excerpt,

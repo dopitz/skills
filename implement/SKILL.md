@@ -1,24 +1,31 @@
 ---
 name: implement
-description: "Implement a piece of work based on a spec or set of tickets."
-disable-model-invocation: true
+description: Implement tickets or specs with validation, review, and completion evidence.
+disable-model-invocation: false
 ---
 
-Implement the work described by the user in the spec or tickets.
+## Establish context
 
-Use tdd where possible, at pre-agreed seams.
+Read the ticket or spec, linked sources, validation decisions, and relevant prerequisite findings. Verify consequential claims against code. For a ticket set, work in dependency order; start only unblocked tickets. Record blockers and continue independent authorized work.
 
-Follow the repository's existing comment and documentation conventions, including the format and tags used by surrounding function/API documentation. Apply applicable `doc-style.md` or equivalent guidance to code documentation as well as standalone documentation.
+Before each ticket or direct spec, capture the starting revision and pre-existing staged/worktree changes. Distinguish its review scope from earlier tickets and unrelated changes.
 
-Limit incidental inline comments to non-obvious decisions or invariants. This restriction does not apply to API contracts or established function documentation. Describe current behavior, not historical changes.
+## Implement and validate
 
-Run typechecking regularly, single test files regularly, and the full test suite once at the end.
+Use TDD where useful at agreed behavioral seams; otherwise select existing seams appropriate to the change. Run focused checks during implementation and required repository checks before completion. Reuse passing evidence until relevant changes invalidate it. Unexecuted checks are not passing evidence.
 
-Once a ticket's acceptance criteria are met, use /code-review-specs with the ticket you just worked on to review.
+Follow repository comment/documentation conventions and applicable `doc-style.md`, including function/API formats and tags. Preserve API contracts; limit incidental comments to non-obvious intent or invariants and describe current behavior.
 
-Once done, mark it done before moving on:
+For documentation work, validate examples, links, rendering, and applicable documentation checks.
 
-- In the ticket file itself, check off each satisfied `- [ ]` acceptance criterion to `- [x]`.
-- Add a `**Status:** Done` line under the ticket's title/heading.
-- In the set's `00-index.md`, mark that ticket's list entry as done (e.g. strike it through).
+## Review and resolve
 
+Use [code-review-specs](../code-review-specs/SKILL.md), supplying the ticket/spec, starting revision, actual changes including uncommitted work, and validation evidence. Resolve blocking findings, rerun affected checks, and review corrections. The review stays read-only; implementation owns fixes.
+
+## Record completion
+
+Record concise evidence in the ticket's completion section, creating it when needed: outcome, material decisions, reviewed changes, check results, findings/resolutions, and remaining limitations.
+
+Mark Done only when acceptance criteria and required checks pass and blocking findings are resolved. Check satisfied criteria, set `**Status:** Done` below the title, and check the corresponding index entry when present. Never weaken criteria to claim completion. For a direct spec, report evidence and completion without requiring ticket files.
+
+After a ticket set, verify the integrated result and run any outstanding integration checks.

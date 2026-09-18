@@ -1,106 +1,37 @@
 ---
-
 name: code-review-specs
-description: Review a completed implementation against both the repository's general code-review standards and the originating spec/ticket. Run the general code review and a focused spec review, then report both separately.
+description: Review an implementation for code quality and compliance with its ticket or spec, reporting evidence and completion blockers separately.
 ---
 
-# Code Review Specs
+Stay read-only. Implementation and fixes belong to [implement](../implement/SKILL.md).
 
-Review the completed implementation on two independent axes:
+## Establish scope
 
-1. **Code review** — invoke `/code-review` for the repository's general code-quality review.
-2. **Spec review** — verify that the implementation satisfies the originating ticket and spec.
+Use the supplied ticket/spec, source references, starting revision, implementation changes, and validation evidence. Follow explicit local paths or tracker URLs before searching nearby documents. Do not assume a particular directory layout or that implementation checks passed.
 
-The implementation has already been completed and tested by `/implement`. **Do not modify code.**
+Include relevant staged/worktree changes and distinguish unrelated pre-existing edits. If the comparison base is materially ambiguous, clarify it rather than inventing a boundary.
 
-## 1. Establish context
+For a ticket, review its acceptance criteria and applicable parent-spec constraints. Requirements assigned to later tickets are outside this review. Without a parent spec, review the ticket and disclose the missing context. Without either, perform code review and report requirements review unavailable.
 
-Use the work supplied by `/implement` or `/implement-ticket` to identify:
+## Review
 
-* The fixed point before implementation began.
-* The implementation commit/branch.
-* The ticket, if one exists.
-* The originating spec.
+Use [code-review](../code-review/SKILL.md) for code quality and its finding format, severities, and blocking/advisory decisions. Do not duplicate its methodology or findings.
 
-If the user supplied a ticket or spec path, use it directly.
+Compare each in-scope requirement with implementation and validation evidence:
 
-For a ticket, look for its parent spec in the surrounding feature directory:
+- **PASS:** Evidence supports satisfaction.
+- **PARTIAL:** Only partly satisfied.
+- **FAIL:** Evidence shows noncompliance.
+- **UNVERIFIED:** Evidence is insufficient; name the missing check or context.
+- **N/A:** Does not apply; explain why.
 
-```text
-.scratch/<feature>/
-├── spec.md
-└── issues/
-    ├── 00-index.md
-    └── 01-ticket.md
-```
+A test's existence alone is not proof. Distinguish code inspection from executed validation. Required criteria that are PARTIAL, FAIL, or UNVERIFIED block completion.
 
-If no ticket exists, review directly against the spec.
+## Report
 
-If no spec can be found, report that the spec review could not be performed rather than inventing requirements.
+Keep the result concise:
 
-## 2. Run the code review
-
-Invoke `/code-review` against the implementation.
-
-Do not duplicate its review methodology or findings. Use its output as the **Code Review** section of the final result.
-
-## 3. Review against the spec
-
-Read the originating spec and ticket, then compare the implementation against their explicit requirements and acceptance criteria.
-
-Focus only on **spec compliance**, not general code quality.
-
-For each requirement, determine:
-
-* **PASS** — satisfied by the implementation.
-* **PARTIAL** — only partly satisfied.
-* **FAIL** — not satisfied.
-* **N/A** — does not apply.
-
-Check the implementation and relevant tests as evidence. Do not assume a requirement is satisfied merely because a related test exists.
-
-Pay particular attention to explicit edge cases, error behavior, constraints, and acceptance criteria.
-
-## 4. Final report
-
-Keep the two reviews separate:
-
-```markdown
-# Code Review
-
-<output/findings from /code-review>
-
-# Spec Review
-
-## Summary
-
-<brief assessment of spec compliance>
-
-## Requirements
-
-| Requirement | Status | Evidence |
-|---|---|---|
-| ... | PASS | ... |
-| ... | PARTIAL | ... |
-| ... | FAIL | ... |
-
-## Findings
-
-<Only PARTIAL/FAIL requirements, with concise explanations>
-
-## Context
-
-- **Fixed point:** `<commit/ref>`
-- **Implementation:** `<commit/ref>`
-- **Ticket:** `<path or none>`
-- **Spec:** `<path or none>`
-```
-
-If there are no spec issues, say so explicitly.
-
-End with a brief overall conclusion stating whether:
-
-* the implementation has meaningful code-review issues; and
-* the implementation satisfies the originating spec.
-
-Do not modify code or fix findings.
+1. **Context:** Starting revision, reviewed changes (including uncommitted work), ticket/spec references, and validation limits.
+2. **Code review:** Findings from code-review.
+3. **Spec review:** Requirement/status/evidence table. For unmet or unverified criteria, identify the correction or missing evidence; reference related code findings instead of repeating them.
+4. **Gate:** PASS only when required criteria/checks are satisfied and no blocking findings remain; otherwise NOT PASSED, naming blockers or unavailable evidence. List advisory findings separately from blockers.

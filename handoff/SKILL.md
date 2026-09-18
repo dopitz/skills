@@ -7,11 +7,11 @@ Create a concise handoff from the current context.
 
 Capture only the information another agent needs to continue:
 
-- Goal and current state.
-- Important decisions, facts, and constraints.
-- Work completed and outstanding.
-- Relevant files, commands, or references.
-- Recommended next steps.
+- Goal, current state, potentially active ticket/spec.
+- Decisions, constraints, and existing authorizations.
+- Completed/outstanding work, validation results, and blockers.
+- Relevant files, revision/worktree state, commands, and references.
+- Exact next action and any prerequisite resolution.
 
 Remove repetition, irrelevant discussion, and unnecessary reasoning.
 

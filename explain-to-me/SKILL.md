@@ -1,6 +1,6 @@
 ---
 name: explain-to-me
-description: explain code or concepts
+description: Explain a specific code path, change, or design decision briefly, grounding the reasoning in code. Use assisted-reading for a comprehensive source walkthrough.
 ---
 
 Explain the referenced code, change, or implementation decision at a junior developer level in simple terms. Assume I can read and understand code, but may not know all architectural context, conventions, or reasoning behind the change.

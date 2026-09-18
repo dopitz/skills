@@ -1,17 +1,17 @@
 ---
 name: release-notes
-description: Write or update entries in RELEASE_NOTES.md (or CHANGELOG) for the most recent/unreleased version section. Use when asked to add release notes, update the changelog, document changes for a release, or summarize what changed for users. Applies a strict user-impact filter and a fixed set of H3 headings.
+description: Update release notes or a changelog with concise user-facing changes in the unreleased or explicitly targeted version section.
 ---
 
 # Release Notes
 
-Add the relevant content to the **most recent version section** of `RELEASE_NOTES.md`.
+Use the project's existing release-notes/changelog file. Target an explicitly requested version; otherwise use or create an unreleased section following project conventions, leaving published releases unchanged.
 
 Only include changes that matter to existing public users of this project. Prioritize user impact over implementation detail.
 
 ## Headings
 
-Use **only** these H3 headings, in this exact order. Omit any heading with no applicable entries.
+Preserve existing heading conventions. Otherwise use these H3 headings in order, omitting empty sections:
 
 ```
 ### New Features
