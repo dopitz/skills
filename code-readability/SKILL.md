@@ -1,15 +1,14 @@
 ---
 name: code-readability
-description: formats code to be better readable
+description: Improve code readability with logical spacing, purpose comments, and compact line wrapping.
 ---
 
-Review the code for large continuous blocks and split them into logical units using vertical whitespace.
-Avoid eager line wrapping: preserve readable lines up to 120 characters; wrap longer lines at punctuation or logical boundaries.
+Change only whitespace and comments; preserve behavior and code structure.
 
-Add brief explanatory comments where useful:
-- Prefer a single line; never more than two.
-- Explain the purpose of the unit, not what individual lines do.
-- Avoid over-commenting or excessive whitespace.
-- Do not change code behavior or structure beyond whitespace and comments.
+- Group related statements into logical blocks, each performing one step. Separate blocks with one blank line.
+- Every logical block must have a short, single-line comment immediately above it at the same indentation, even when its code is easy to read. Explain its purpose or constraints using known context; reuse or improve existing comments.
+- Individual trivial declarations and obvious standalone statements need no separate comments. Add nested comments only for distinct substeps.
+- Use 120 characters, including indentation, as the line-width target. Preserve readable lines that fit, and actively rejoin unnecessarily wrapped calls, signatures, expressions, and short literals that fit on one readable line.
+- Wrap longer lines at logical boundaries. Preserve breaks required by syntax, comments, or meaningful grouping.
 
-The goal is to make large blocks easy to scan while keeping the code clean and compact.
+Before finishing, verify that every logical block has its purpose comment and unnecessarily wrapped statements have been rejoined.
